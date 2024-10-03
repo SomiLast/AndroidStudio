@@ -42,6 +42,9 @@ class MainActivity : AppCompatActivity() {
 
                 // Выводим сообщение в TextView
                 messageTextView.text = message
+            } else {
+                // Если возраст не введен или введен неправильно
+                messageTextView.text = "Пожалуйста, введите корректный возраст!"
             }
         }
     }
