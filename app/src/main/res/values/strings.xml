@@ -6,5 +6,5 @@
 
     <string name="calculateButton">Calculate</string>
     <string name="numberInput">Введите значение a</string>
-    <string name="resultTextView">Сообщение</string>
+    <string name="resultTextView">Результат</string>
 </resources>

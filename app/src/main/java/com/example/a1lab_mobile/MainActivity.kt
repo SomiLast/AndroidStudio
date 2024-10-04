@@ -49,21 +49,40 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Находим элементы интерфейса для 2 лабы
-        val numberInput = findViewById<EditText>(R.id.editTextInput)
+        val editTextInput = findViewById<EditText>(R.id.editTextInput)
         val calculateButton = findViewById<Button>(R.id.calculateButton)
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
 
-        // Устанавливаем обработчик нажатия на кнопку
+        // Обработка нажатия кнопки
         calculateButton.setOnClickListener {
-            // Получаем введенное пользователем число
-            val aText = numberInput.text.toString()
-            val a = aText.toDoubleOrNull()
 
-            // Проверяем корректность введенного числа
+            // Преобразуем текст из поля ввода в число
+            val a = editTextInput.text.toString().toDoubleOrNull()
+
+            // Проверяем, введено ли корректное значение
             if (a == null) {
-                resultTextView.text = "Пожалуйста, введите корректное число!"
+                resultTextView.text = "Введите корректное число."
                 return@setOnClickListener
             }
+
+            // Если a > 7, выводим предупреждение
+            if (a > 7) {
+                resultTextView.text = "Результат не может быть получен для значений a > 7."
+                return@setOnClickListener
+            }
+
+            // Переменные для вычисления частичных сумм
+            var sum = 0.0
+            var i = 1
+
+            // Цикл для нахождения первой суммы, которая больше a
+            while (a >= sum) {
+                sum += 1.0 / i  // Вычисляем сумму ряда
+                i++             // Увеличиваем шаг
+            }
+
+            // Выводим результат на экран
+            resultTextView.text = "Первое значение суммы, которое больше $a: $sum"
         }
     }
 }
