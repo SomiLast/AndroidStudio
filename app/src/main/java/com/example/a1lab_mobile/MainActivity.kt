@@ -47,5 +47,23 @@ class MainActivity : AppCompatActivity() {
                 messageTextView.text = "Пожалуйста, введите корректный возраст!"
             }
         }
+
+        // Находим элементы интерфейса для 2 лабы
+        val numberInput = findViewById<EditText>(R.id.editTextInput)
+        val calculateButton = findViewById<Button>(R.id.calculateButton)
+        val resultTextView = findViewById<TextView>(R.id.resultTextView)
+
+        // Устанавливаем обработчик нажатия на кнопку
+        calculateButton.setOnClickListener {
+            // Получаем введенное пользователем число
+            val aText = numberInput.text.toString()
+            val a = aText.toDoubleOrNull()
+
+            // Проверяем корректность введенного числа
+            if (a == null) {
+                resultTextView.text = "Пожалуйста, введите корректное число!"
+                return@setOnClickListener
+            }
+        }
     }
 }
