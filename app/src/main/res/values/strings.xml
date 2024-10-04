@@ -7,4 +7,8 @@
     <string name="calculateButton">Calculate</string>
     <string name="numberInput">Введите значение a</string>
     <string name="resultTextView">Результат</string>
+
+    <string name="invertButton">Convert</string>
+    <string name="inputString">Введите строку</string>
+    <string name="outputTextView">Результат</string>
 </resources>
