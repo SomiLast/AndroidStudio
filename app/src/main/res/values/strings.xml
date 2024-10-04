@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">1lab_mobile</string>
     <string name="checkAgeButton">Check</string>
-    <string name="ageInput">Age</string>
-    <string name="messageTextView">Message</string>
+    <string name="ageInput">Введите возраст</string>
+    <string name="messageTextView">Сообщение</string>
+
+    <string name="calculateButton">Calculate</string>
+    <string name="numberInput">Введите значение a</string>
+    <string name="resultTextView">Сообщение</string>
 </resources>
