@@ -101,6 +101,28 @@ class MainActivity : AppCompatActivity() {
                 outputTextView.text = "Пожалуйста, введите строку!"
                 return@setOnClickListener
             }
+
+            // Инвертируем строку
+            val invertedString = invertString(originalString)
+
+            // Выводим инвертированную строку
+            outputTextView.text = "Инвертированная строка: $invertedString"
         }
+    }
+
+    // Перемещаем функцию инверсии вне метода onCreate
+    // для использования в любом месте внутри класса
+    private fun invertString(str: String): String {
+        val charArray = str.toCharArray()
+        val n = charArray.size
+
+        // Цикл для обмена символами
+        for (i in 0 until n / 2) {
+            val temp = charArray[i]
+            charArray[i] = charArray[n - 1 - i]
+            charArray[n - 1 - i] = temp
+        }
+
+        return String(charArray)
     }
 }
