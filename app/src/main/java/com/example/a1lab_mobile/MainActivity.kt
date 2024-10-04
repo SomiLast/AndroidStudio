@@ -84,5 +84,23 @@ class MainActivity : AppCompatActivity() {
             // Выводим результат на экран
             resultTextView.text = "Первое значение суммы, которое больше $a: $sum"
         }
+
+
+        // Находим элементы интерфейса
+        val inputString = findViewById<EditText>(R.id.inputString)
+        val invertButton = findViewById<Button>(R.id.invertButton)
+        val outputTextView = findViewById<TextView>(R.id.outputTextView)
+
+        // Устанавливаем обработчик нажатия на кнопку
+        invertButton.setOnClickListener {
+            // Получаем введённую строку
+            val originalString = inputString.text.toString()
+
+            // Проверяем, не пустая ли строка
+            if (originalString.isEmpty()) {
+                outputTextView.text = "Пожалуйста, введите строку!"
+                return@setOnClickListener
+            }
+        }
     }
 }
